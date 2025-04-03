@@ -1,0 +1,61 @@
+# 📌 README.txt
+
+## 🔹 Solution Approach
+This project focuses on **converting E57 point cloud files into 3D meshes (PLY & OBJ formats)** while providing an interactive **web-based UI using Streamlit**. The key steps are:
+1. **File Upload** – Users upload an `.e57` file containing 3D scan data.
+2. **Point Cloud Extraction** – Extracts `X, Y, Z` coordinates from the file using `pye57`.
+3. **Point Cloud Processing** – Normal estimation and outlier removal are applied for better mesh generation.
+4. **Meshing** – Converts the point cloud into a **watertight 3D mesh** using **Ball Pivoting Algorithm (BPA)**.
+5. **Downloadable Output** – Users can download the **PLY (point cloud) and OBJ (3D mesh)** files.
+
+## 🔹 Implementation Details
+- **Backend:** Flask (for file handling, conversion, and API calls).
+- **Frontend:** Streamlit (for an interactive, user-friendly UI).
+- **Libraries:**
+  - `pye57` (for reading `.e57` files).
+  - `open3d` (for point cloud and 3D mesh processing).
+  - `numpy` (for efficient matrix operations).
+  - `Flask-CORS` (for handling API requests).
+
+## 🔹 Execution Steps
+### ✅ 1. Install Dependencies
+Run the following command to install the required libraries:
+```bash
+pip install flask streamlit numpy open3d pye57 flask-cors
+```
+
+### ✅ 2. Start the Backend (Flask Server)
+```bash
+python backend.py
+```
+This will start the API for file processing.
+
+### ✅ 3. Start the Streamlit UI
+```bash
+streamlit run frontend.py
+```
+This launches the web app where users can **upload files, process them, and download the output**.
+
+## 🔹 Dependencies
+Ensure the following are installed:
+- **Python 3.8+**
+- **Flask** (`pip install flask flask-cors`)
+- **Streamlit** (`pip install streamlit`)
+- **pye57** (`pip install pye57`)
+- **Open3D** (`pip install open3d`)
+- **NumPy** (`pip install numpy`)
+
+## 🔹 Expected Output
+- A **streamlined UI** that allows users to **upload** `.e57` files.
+- **Real-time processing** with loading indicators.
+- **Download links** for both the **point cloud (PLY)** and **3D mesh (OBJ)** files.
+- A **well-structured, visually appealing UI** designed for **hackathon success!**
+
+---
+
+### 🎯 Hackathon Edge:
+✅ **Smooth UI** (Streamlit)
+✅ **Optimized Backend** (Flask + Open3D)
+✅ **Fast Processing** (Efficient algorithms)
+✅ **Downloadable Outputs**
+
