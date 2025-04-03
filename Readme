@@ -26,15 +26,12 @@ implementation_details:
 
 execution_steps:
   1. Install the required tools:
-     ```sh
      pip install flask flask-cors open3d numpy pye57 streamlit
      ```
   2. Start the backend:
-     ```sh
      python backend.py
      ```
   3. Launch the Streamlit UI:
-     ```sh
      streamlit run frontend.py
      ```
   4. Open the app in your browser.
