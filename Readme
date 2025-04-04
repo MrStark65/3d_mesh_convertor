@@ -1,4 +1,5 @@
 project_name: "E57 to 3D Mesh Converter 🚀"
+
 description: "A powerful web tool that transforms raw E57 point cloud files into structured 3D meshes (PLY & OBJ) with just a few clicks!"
 
 solution_approach:
