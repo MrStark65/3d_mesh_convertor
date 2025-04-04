@@ -22,15 +22,33 @@ libraries_used:
     Streamlit: "Provides an interactive and user-friendly UI for file upload and preview."
 
 algorithms_used:
-  - **Statistical Outlier Removal (SOR)**:  
-      - Removes noise from raw point clouds.  
-      - Uses **neighbor-based filtering** to eliminate points that deviate significantly from the local mean.  
-      - Ensures a cleaner 3D mesh for better reconstruction.  
+  - Statistical Outlier Removal (SOR):  
+      description: |
+        A preprocessing technique used to clean up point cloud data by removing noise.
+        It works by analyzing each point’s distance to its neighbors. If a point is too far
+        from its nearby neighbors, it's likely an outlier and gets removed.
 
-  - **Ball Pivoting Algorithm (BPA)**:  
-      - Converts **filtered** point clouds into structured 3D meshes.  
-      - Works by **rolling a virtual ball** over the point cloud to connect nearby points into a surface.  
-      - Produces **high-quality, smooth 3D meshes**.  
+        This is important because noisy or scattered points can distort the final 3D mesh.
+        SOR ensures a cleaner point cloud, leading to more accurate and realistic mesh reconstructions.
+
+        🔹 How it works:
+          - For every point, compute the distance to its *k* nearest neighbors.
+          - Calculate the mean distance and standard deviation of all these distances.
+          - Any point whose average distance is above a threshold (typically mean + α * std) is marked as an outlier and removed.
+
+  - Ball Pivoting Algorithm (BPA):  
+      description: |
+        An advanced surface reconstruction technique that builds 3D meshes from a clean point cloud.
+        BPA simulates a ball rolling over the surface of the points. Whenever the ball touches three
+        points without enclosing any others, a triangle is created.
+
+        This technique creates watertight, high-quality 3D surfaces, ideal for visualizations and 3D printing.
+
+        🔹 How it works:
+          - Estimate normals at each point (direction of surface).
+          - Place a virtual ball of fixed radius in the point cloud.
+          - Roll the ball along the cloud, connecting triplets of points to form triangles.
+          - Repeat until the surface is complete.
 
 file_handling:
   upload_folder: "uploads/"
