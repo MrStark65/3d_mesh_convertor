@@ -12,7 +12,7 @@ A Python-based **E57 point cloud viewer** that displays **real-world colors** us
 
 
 
-## 📌 **Algorithm Explanation**  
+# 📌 **Algorithm Explanation**  
 
 ###  **1. Statistical Outlier Removal (SOR) Algorithm**  
 👉 **Purpose:** Removes unwanted noise from the point cloud by analyzing point density.  
@@ -30,19 +30,19 @@ def remove_outliers(point_cloud, nb_neighbors=20, std_ratio=2.0):
     cl, ind = point_cloud.remove_statistical_outlier(nb_neighbors=nb_neighbors, std_ratio=std_ratio)
     return cl
 ```
-# 🎯 Ball Pivoting Algorithm (BPA) for 3D Mesh Generation  
+### **2. Ball Pivoting Algorithm (BPA) for 3D Mesh Generation**
 
 ### 🚀 **Overview**  
 The **Ball Pivoting Algorithm (BPA)** is a meshing technique that converts a **point cloud** into a **structured 3D mesh** by rolling a virtual ball over the points and forming triangles.  
 
-## 🔹 **How Ball Pivoting Algorithm Works**  
+ 🔹 **How Ball Pivoting Algorithm Works**  
 
 1️⃣ **Estimate Normals:** Compute surface normals for better meshing accuracy.  
 2️⃣ **Set Ball Radius:** The algorithm uses a **rolling ball** to determine connections.  
 3️⃣ **Pivot Around Points:** The ball moves along the cloud, forming **triangles** where it touches three points.  
 4️⃣ **Continue Until Completion:** The process repeats until all possible triangles are formed.  
 
-## 📌 **Python Code for BPA Meshing**  
+📌 **Python Code for BPA Meshing**  
 
 ```python
 import open3d as o3d
