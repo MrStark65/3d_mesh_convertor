@@ -4,9 +4,9 @@
 
 🔹 **Team Name:** Team_Bug  
 🔹 **Team Members:** Lakshay Singh & Priya Singh  
-🔹 **college name:** Galgotias University
-🔹 **Problem Statement:** 3D Mesh Convertor  
+🔹 **Problem Statement:** 3D Mesh Convertor 
 
+ 
 A Python-based **E57 point cloud viewer** that displays **real-world colors** using Open3D and PyQt5.  
 
 ---
